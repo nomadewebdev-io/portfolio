@@ -86,6 +86,10 @@ Editez `src/app/globals.css` pour changer les variables CSS.
 
 ## 🚀 Déploiement
 
+Le projet est déployé et accessible en ligne :
+
+🌐 **[portfolio-nomade.netlify.app](https://portfolio-nomade.netlify.app)**
+
 Le projet est prêt pour être déployé sur [Vercel](https://vercel.com) :
 
 ```bash
