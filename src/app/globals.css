@@ -4,21 +4,21 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
-    --primary: 239 84% 67%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 98%;
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 64%;
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 33% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 158 64% 52%;
+    --accent-foreground: 222 47% 4%;
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 65%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 239 84% 67%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 160 84% 39%;
   }
 }
 
@@ -55,25 +55,28 @@
   background: hsl(var(--muted-foreground));
 }
 
-/* Gradient text */
+/* Gradient text - Silvery white to vibrant emerald */
 .gradient-text {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  background-image: linear-gradient(135deg, #ffffff 20%, #34d399 75%, #059669 100%);
 }
 
-/* Glass effect */
+/* Subtle glass effect */
 .glass {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Glow effect */
+/* Glow effect - refined emerald */
 .glow-primary {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
 }
 
 /* Selection color */
 ::selection {
-  background-color: rgba(99, 102, 241, 0.3);
+  background-color: rgba(16, 185, 129, 0.3);
+  color: #ffffff;
 }

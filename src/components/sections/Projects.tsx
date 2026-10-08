@@ -1,58 +1,61 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, ExternalLink } from 'lucide-react'
+import { Github, ExternalLink, ShoppingBag, BarChart3, CloudSun, CheckSquare, Server, Sparkles } from 'lucide-react'
 import Badge from '../ui/Badge'
 import Card from '../ui/Card'
 
 const projects = [
   {
-    title: 'Application E-commerce',
-    description: 'Plateforme e-commerce complète avec panier, paiement stripe et panneau d\'administration. Stack: Next.js, Prisma, PostgreSQL.',
-    tags: ['Next.js', 'Prisma', 'PostgreSQL', 'Stripe'],
-    github: '#',
+    title: 'Plateforme E-Commerce & Paiements Mobiles',
+    featured: true,
+    description: 'Solution e-commerce complète pensée pour le commerce en Afrique de l\'Ouest : gestion du panier réactif, tarification en Franc CFA (FCFA), et intégration native des paiements mobiles par Wave et Orange Money avec webhook de confirmation automatique.',
+    tags: ['Next.js 14', 'Prisma', 'PostgreSQL', 'Wave API', 'Orange Money', 'FCFA'],
+    github: 'https://github.com/nomadewebdev-io',
     demo: '#',
+    icon: ShoppingBag,
     comingSoon: false,
+    highlight: 'Projet Phare',
   },
   {
-    title: 'Dashboard Analytics',
-    description: 'Tableau de bord interactif pour la visualisation de données en temps réel. Graphiques dynamiques et rapports exportables.',
+    title: 'Dashboard Analytics & Gestion Financière',
+    featured: false,
+    description: 'Tableau de bord interactif pour entreprises locales : suivi des ventes journalières, reporting de trésorerie en FCFA, et visualisation graphique temps réel des transactions.',
     tags: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-    github: '#',
+    github: 'https://github.com/nomadewebdev-io',
     demo: '#',
+    icon: BarChart3,
     comingSoon: false,
   },
   {
-    title: 'Application Météo',
-    description: 'Application météo moderne et élégante permettant de consulter le climat en temps réel de toutes les villes du monde. Données actualisées via API OpenWeatherMap, design responsive avec animations fluides.',
+    title: 'Application Météo Live',
+    featured: false,
+    description: 'Application de prévisions météorologiques en temps réel avec géolocalisation des villes mondiales et locales, interface fluide et données précises via l\'API OpenWeatherMap.',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'OpenWeatherMap API'],
     github: 'https://github.com/nomadewebdev-io/meteo-app',
     demo: 'https://frolicking-griffin-79bb29.netlify.app/',
+    icon: CloudSun,
     comingSoon: false,
   },
   {
-    title: 'Ma Liste de Tâches',
-    description: 'Application web simple et élégante pour gérer vos tâches quotidiennes. Fonctionnalités : ajout/suppression de tâches, persistance des données avec localStorage, compteur de progression, design moderne responsive.',
-    tags: ['HTML5', 'CSS3', 'JavaScript Vanilla'],
+    title: 'Gestionnaire de Tâches & Productivité',
+    featured: false,
+    description: 'Application web de productivité personnelle avec persistance locale des données (localStorage), suivi de complétion et ergonomie soignée pour écrans mobiles et ordinateurs.',
+    tags: ['HTML5', 'CSS3', 'JavaScript Vanilla', 'LocalStorage'],
     github: 'https://github.com/nomadewebdev-io/application-Todo-list',
     demo: 'https://application-list-de-tache.netlify.app/',
+    icon: CheckSquare,
     comingSoon: false,
   },
   {
-    title: 'API REST complète',
-    description: 'API RESTful pour une application mobile avec authentification JWT, upload de fichiers et documentation Swagger.',
-    tags: ['Node.js', 'Express', 'PostgreSQL', 'Redis'],
-    github: '#',
+    title: 'Passerelle API Mobile & Services Backend',
+    featured: false,
+    description: 'Architecture backend RESTful sécurisée avec authentification JWT, gestion de rôles, téléchargement de documents et documentation Swagger interactive.',
+    tags: ['Node.js', 'Express', 'PostgreSQL', 'Redis', 'Swagger'],
+    github: 'https://github.com/nomadewebdev-io',
     demo: '#',
+    icon: Server,
     comingSoon: false,
-  },
-  {
-    title: 'Prochain projet',
-    description: 'Un nouveau projet passionnant arrive bientôt. Restez à l\'écoute pour les mises à jour.',
-    tags: ['???'],
-    github: '#',
-    demo: '#',
-    comingSoon: true,
   },
 ]
 
@@ -69,76 +72,102 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <Badge variant="outline" className="mb-4">Projets</Badge>
-          <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-            Mes Réalisations
+          <h2 className="text-3xl md:text-5xl font-bold font-display mb-4 tracking-tight">
+            Réalisations & Produits Déployés
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Des solutions concrètes pour des problèmes réels
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+            Des applications concrètes, sécurisées et orientées création de valeur commerciale.
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* Dynamic Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className={`h-full flex flex-col ${project.comingSoon ? 'opacity-60' : ''}`}>
-                {/* Project Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center">
-                    <span className="text-2xl">🚀</span>
+          {projects.map((project, index) => {
+            const isFeatured = project.featured
+            const ProjectIcon = project.icon
+
+            return (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={isFeatured ? 'md:col-span-2 lg:col-span-2' : ''}
+              >
+                <div
+                  className={`h-full flex flex-col justify-between rounded-3xl p-6 sm:p-8 border transition-all duration-300 ${
+                    isFeatured
+                      ? 'bg-slate-900/90 border-emerald-500/30 hover:border-emerald-500/50 shadow-2xl shadow-emerald-950/20'
+                      : 'bg-slate-900/80 border-white/[0.08] hover:border-emerald-500/30 shadow-lg shadow-black/30'
+                  }`}
+                >
+                  <div>
+                    {/* Project Header */}
+                    <div className="flex items-start justify-between gap-4 mb-5">
+                      <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                        <ProjectIcon size={22} />
+                      </div>
+                      {isFeatured && (
+                        <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 border border-emerald-500/30 text-emerald-300">
+                          <Sparkles size={13} />
+                          Projet Phare
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Title & Description */}
+                    <h3 className="text-xl sm:text-2xl font-bold font-display mb-3 text-foreground">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm sm:text-base mb-6 leading-relaxed">
+                      {project.description}
+                    </p>
                   </div>
-                  {project.comingSoon && (
-                    <Badge variant="primary">Prochainement</Badge>
-                  )}
-                </div>
 
-                {/* Project Content */}
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4 flex-grow">
-                  {project.description}
-                </p>
+                  <div>
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-300 border border-white/5"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="outline">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-
-                {/* Links */}
-                {!project.comingSoon && (
-                  <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <Github size={18} />
-                      Code
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <ExternalLink size={18} />
-                      Démo
-                    </a>
+                    {/* Links */}
+                    <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                      {project.github && project.github !== '#' && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-slate-300 hover:text-emerald-400 transition-colors py-1.5"
+                        >
+                          <Github size={18} />
+                          Code source
+                        </a>
+                      )}
+                      {project.demo && project.demo !== '#' && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors py-1.5"
+                        >
+                          <ExternalLink size={18} />
+                          Voir la démo
+                        </a>
+                      )}
+                    </div>
                   </div>
-                )}
-              </Card>
-            </motion.div>
-          ))}
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

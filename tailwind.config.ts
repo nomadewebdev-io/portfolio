@@ -64,8 +64,8 @@ const config: Config = {
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.25)' },
+          '100%': { boxShadow: '0 0 40px rgba(16, 185, 129, 0.5)' },
         },
       },
     },

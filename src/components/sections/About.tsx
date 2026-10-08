@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { FileText, Code2, Users, Sparkles } from 'lucide-react'
+import { FileText, Code2, Users, Sparkles, MapPin, CheckCircle2 } from 'lucide-react'
 import Badge from '../ui/Badge'
 import Button from '../ui/Button'
 
@@ -10,7 +10,7 @@ const highlights = [
   {
     icon: Code2,
     title: 'Code propre',
-    description: 'Architecture maintenable et escalable',
+    description: 'Architecture maintenable et scalable',
   },
   {
     icon: Sparkles,
@@ -44,68 +44,91 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image / Avatar */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Image / Portrait Card */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
-              {/* Decorative ring */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 animate-spin-slow" />
-              <div className="absolute inset-2 rounded-full bg-background overflow-hidden">
-                {/* Profile photo */}
-                <Image
-                  src="/profile.jpg"
-                  alt="Mamadou Diallo"
-                  fill
-                  className="object-cover rounded-full"
-                  priority
-                />
-              </div>
-            </div>
+            <div className="relative w-full max-w-[340px] sm:max-w-[380px]">
+              {/* Subtle ambient glow behind card */}
+              <div className="absolute -inset-3 bg-gradient-to-tr from-emerald-500/15 via-emerald-800/10 to-transparent rounded-3xl blur-2xl pointer-events-none" />
 
-            {/* Floating badges */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2"
-            >
-              <span className="text-sm">Freelance disponible</span>
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2"
-            >
-              <span className="text-sm">+2 ans d&apos;expérience</span>
-            </motion.div>
+              {/* Main portrait frame */}
+              <div className="relative rounded-3xl p-3 bg-slate-900/90 border border-white/10 shadow-2xl backdrop-blur-sm">
+                <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-950">
+                  <Image
+                    src="/profile.png"
+                    alt="Mamadou Diallo"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 380px"
+                    className="object-cover object-[50%_20%] transition-transform duration-500 hover:scale-105"
+                    priority
+                  />
+                  {/* Subtle bottom gradient overlay for legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
+
+                  {/* Badges on photo */}
+                  <div className="absolute top-3.5 right-3.5">
+                    <span className="flex items-center gap-1.5 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 text-white/90 text-xs shadow-md">
+                      <MapPin size={13} className="text-emerald-400" />
+                      Dakar, Sénégal
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-3.5 right-3.5">
+                    <span className="flex items-center gap-1.5 bg-emerald-950/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-emerald-500/40 text-emerald-300 text-xs font-medium shadow-md">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      Freelance dispo
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Experience floating chip */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -bottom-5 -left-3 sm:-left-6 bg-slate-900/95 backdrop-blur-md border border-white/15 rounded-2xl px-4 py-3 shadow-xl flex items-center gap-3"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-sm">
+                  +2
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-foreground">Années d&apos;expérience</p>
+                  <p className="text-[11px] text-muted-foreground">Développement Full-Stack</p>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="space-y-6"
           >
             <div className="space-y-4">
-              <p className="text-lg text-foreground/90">
-                <span className="text-2xl">👋</span> Salut, je suis <strong>Mamadou Diallo</strong>.
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-sm font-medium">
+                <CheckCircle2 size={16} />
+                <span>Développeur passionné & orienté résultats</span>
+              </div>
+              <h3 className="text-2xl font-bold font-display text-foreground">
+                Je suis Mamadou Diallo
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Développeur web full-stack freelance basé à Dakar, passionné par la création d&apos;applications
+                modernes et performantes. Je travaille avec des startups, des PME et des entrepreneurs
+                pour transformer leurs idées en produits digitaux fonctionnels et scalables.
               </p>
-              <p className="text-muted-foreground">
-                Développeur web full-stack freelance, passionné par la création d&apos;applications
-                modernes et performantes. Je travail avec des startups, des PME et des entrepreneurs
-                pour transformer leurs idées en produits digitaux fonctionnels.
-              </p>
-              <p className="text-muted-foreground">
-                Mon approche privilégie la qualité du code, la communication transparente
-                et le respect des délais. Chaque projet est une opportunité de créer quelque
-                chose de significatif.
+              <p className="text-muted-foreground leading-relaxed">
+                Mon approche privilégie la clarté du code, l&apos;expérience utilisateur, la communication transparente
+                et le respect rigoureux des délais. Chaque projet est conçu sur-mesure pour créer un réel impact.
               </p>
             </div>
 
@@ -114,20 +137,20 @@ export default function About() {
               {highlights.map((item) => (
                 <div
                   key={item.title}
-                  className="p-4 rounded-xl bg-white/5 border border-white/10"
+                  className="p-4 rounded-xl bg-slate-900/80 border border-white/10 hover:border-emerald-500/30 transition-colors"
                 >
-                  <item.icon className="w-8 h-8 text-indigo-400 mb-3" />
-                  <h3 className="font-semibold mb-1">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <item.icon className="w-7 h-7 text-emerald-400 mb-3" />
+                  <h4 className="font-semibold mb-1 text-sm">{item.title}</h4>
+                  <p className="text-xs text-muted-foreground">{item.description}</p>
                 </div>
               ))}
             </div>
 
             {/* CTA */}
-            <div className="pt-4">
+            <div className="pt-2">
               <Button variant="secondary">
                 <span className="flex items-center gap-2">
-                  <FileText size={20} />
+                  <FileText size={18} />
                   Télécharger mon CV
                 </span>
               </Button>

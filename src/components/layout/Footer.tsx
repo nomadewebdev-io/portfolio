@@ -1,13 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import { Github, Linkedin, Twitter, Mail, MessageCircle } from 'lucide-react'
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:mamadou.diallo@email.com', label: 'Email' },
+  { icon: MessageCircle, href: 'https://wa.me/221770000000', label: 'WhatsApp' },
+  { icon: Github, href: 'https://github.com/nomadewebdev-io', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/mamadou-diallo-diallo-b9542a', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://twitter.com/dialloemdd', label: 'Twitter' },
+  { icon: Mail, href: 'mailto:nomade.webdev@gmail.com', label: 'Email' },
 ]
 
 const footerLinks = [
@@ -20,7 +21,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-background/50 backdrop-blur-sm">
+    <footer className="relative border-t border-white/10 bg-slate-950/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand */}
@@ -30,20 +31,20 @@ export default function Footer() {
                 Mamadou Diallo
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm">
-              Développeur Web Full-Stack freelance. Je transforme vos idées en applications web modernes et performantes.
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Développeur Web Full-Stack freelance basé à Dakar. Création d&apos;applications performantes, intuitives et adaptées aux réalités du marché.
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold mb-4">Navigation</h3>
-            <ul className="space-y-3">
+            <h3 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">Navigation</h3>
+            <ul className="space-y-2.5">
               {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                    className="text-muted-foreground hover:text-emerald-400 transition-colors text-sm py-1 inline-block"
                   >
                     {link.label}
                   </Link>
@@ -54,18 +55,18 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h3 className="text-sm font-semibold mb-4">Retrouvez-moi</h3>
-            <div className="flex items-center gap-4">
+            <h3 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">Échangeons</h3>
+            <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors"
+                  className="w-10 h-10 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 transition-all"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} />
+                  <social.icon size={18} />
                 </a>
               ))}
             </div>
@@ -74,12 +75,12 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/5">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-muted-foreground text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+            <p>
               © {new Date().getFullYear()} Mamadou Diallo. Tous droits réservés.
             </p>
-            <p className="text-muted-foreground text-sm">
-              Conçu et développé avec passion
+            <p>
+              Conçu et développé à Dakar, Sénégal
             </p>
           </div>
         </div>

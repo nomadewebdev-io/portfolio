@@ -16,14 +16,26 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mamadoudiallo.com'),
   title: 'Mamadou Diallo | Développeur Web Full-Stack',
-  description: 'Développeur Web Full-Stack freelance. Je conçois des applications web modernes, performantes et orientées utilisateur.',
-  keywords: ['développeur web', 'full-stack', 'freelance', 'React', 'Next.js', 'Node.js'],
+  description: 'Développeur Web Full-Stack freelance basé à Dakar. Je conçois des applications web modernes, performantes et orientées utilisateur.',
+  keywords: ['développeur web', 'full-stack', 'freelance', 'React', 'Next.js', 'Node.js', 'Dakar', 'Sénégal'],
   authors: [{ name: 'Mamadou Diallo' }],
+  icons: {
+    icon: '/profile.png',
+  },
   openGraph: {
     title: 'Mamadou Diallo | Développeur Web Full-Stack',
-    description: 'Développeur Web Full-Stack freelance. Je conçois des applications web modernes et performantes.',
+    description: 'Développeur Web Full-Stack freelance basé à Dakar. Applications web modernes et performantes.',
     type: 'website',
+    images: [
+      {
+        url: '/profile.png',
+        width: 720,
+        height: 1280,
+        alt: 'Mamadou Diallo - Développeur Web Full-Stack',
+      },
+    ],
   },
 }
 

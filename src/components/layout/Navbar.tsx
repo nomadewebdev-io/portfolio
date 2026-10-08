@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
@@ -38,9 +39,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="#" className="flex items-center gap-2">
-            <span className="text-xl font-bold gradient-text font-display">
-              MD
+          <Link href="#" className="flex items-center gap-2.5 group">
+            <div className="relative w-8 h-8 rounded-full overflow-hidden ring-1 ring-white/20 group-hover:ring-emerald-400 transition-all">
+              <Image
+                src="/profile.png"
+                alt="Mamadou Diallo"
+                fill
+                sizes="32px"
+                className="object-cover object-[50%_20%]"
+              />
+            </div>
+            <span className="text-base sm:text-lg font-bold font-display text-foreground group-hover:text-emerald-400 transition-colors">
+              Mamadou Diallo
             </span>
           </Link>
 
@@ -50,10 +60,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 relative group py-2"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-200 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all duration-200 group-hover:w-full" />
               </Link>
             ))}
           </div>
@@ -62,7 +72,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href="#contact"
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-medium hover:opacity-90 transition-opacity"
+              className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium shadow-md shadow-emerald-950/40 transition-all"
             >
               Discutons
             </Link>
@@ -71,7 +81,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-foreground min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,7 +96,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-lg border-b border-white/10"
+            className="md:hidden bg-slate-950/95 backdrop-blur-lg border-b border-white/10"
           >
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) => (
@@ -94,7 +104,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-muted-foreground hover:text-foreground transition-colors py-2"
+                  className="block text-muted-foreground hover:text-foreground transition-colors py-2.5 text-base"
                 >
                   {link.label}
                 </Link>
@@ -102,7 +112,7 @@ export default function Navbar() {
               <Link
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center px-5 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium"
+                className="block w-full text-center px-5 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium min-h-[44px] flex items-center justify-center"
               >
                 Discutons
               </Link>
