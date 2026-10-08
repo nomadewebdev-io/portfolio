@@ -12,8 +12,8 @@ const experiences = [
     period: '2024 - Présent',
     description: 'Conception et livraison d\'applications web complètes pour des startups et des entreprises locales et internationales. Architecture moderne React/Next.js et Node.js, intégrations d\'APIs de paiement et suivi de projet rigoureux.',
     achievements: [
-      'Plus de 10 projets livrés avec succès dans les délais',
-      'Taux de satisfaction client supérieur à 95%',
+      'Conception et livraison de projets web complets dans le respect des délais',
+      'Accompagnement rigoureux des clients et suivi technique continu',
       'Architecture technique modulaire, sécurisée et scalable',
     ],
   },
@@ -24,7 +24,7 @@ const experiences = [
     period: '2022 - 2024',
     description: 'Participation active au développement d\'applications web pour des PME locales. Travail collaboratif en équipe agile, revues de code et maintien de la qualité logicielle.',
     achievements: [
-      'Contribution directe à 5 applications web en production',
+      'Développement et mise en production d\'applications web pour des PME',
       'Montée en compétence approfondie sur l\'écosystème React et Node.js',
       'Pratique quotidienne des méthodologies Agiles et de Git',
     ],

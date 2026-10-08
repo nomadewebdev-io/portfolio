@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { FileText, Code2, Users, Sparkles, MapPin, CheckCircle2 } from 'lucide-react'
+import { Code2, Users, Sparkles, MapPin, CheckCircle2 } from 'lucide-react'
 import Badge from '../ui/Badge'
 import Button from '../ui/Button'
 
@@ -87,21 +87,6 @@ export default function About() {
                   </div>
                 </div>
               </div>
-
-              {/* Experience floating chip */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -bottom-5 -left-3 sm:-left-6 bg-slate-900/95 backdrop-blur-md border border-white/15 rounded-2xl px-4 py-3 shadow-xl flex items-center gap-3"
-              >
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-sm">
-                  +2
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-foreground">Années d&apos;expérience</p>
-                  <p className="text-[11px] text-muted-foreground">Développement Full-Stack</p>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 
@@ -144,16 +129,6 @@ export default function About() {
                   <p className="text-xs text-muted-foreground">{item.description}</p>
                 </div>
               ))}
-            </div>
-
-            {/* CTA */}
-            <div className="pt-2">
-              <Button variant="secondary">
-                <span className="flex items-center gap-2">
-                  <FileText size={18} />
-                  Télécharger mon CV
-                </span>
-              </Button>
             </div>
           </motion.div>
         </div>

@@ -16,7 +16,10 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mamadoudiallo.com'),
+  metadataBase: new URL('https://portfolio-nomade.netlify.app'),
+  alternates: {
+    canonical: 'https://portfolio-nomade.netlify.app',
+  },
   title: 'Mamadou Diallo | Développeur Web Full-Stack',
   description: 'Développeur Web Full-Stack freelance basé à Dakar. Je conçois des applications web modernes, performantes et orientées utilisateur.',
   keywords: ['développeur web', 'full-stack', 'freelance', 'React', 'Next.js', 'Node.js', 'Dakar', 'Sénégal'],
@@ -27,15 +30,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Mamadou Diallo | Développeur Web Full-Stack',
     description: 'Développeur Web Full-Stack freelance basé à Dakar. Applications web modernes et performantes.',
+    url: 'https://portfolio-nomade.netlify.app',
     type: 'website',
     images: [
       {
-        url: '/profile.png',
+        url: 'https://portfolio-nomade.netlify.app/profile.png',
         width: 720,
         height: 1280,
         alt: 'Mamadou Diallo - Développeur Web Full-Stack',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mamadou Diallo | Développeur Web Full-Stack',
+    description: 'Développeur Web Full-Stack freelance basé à Dakar. Applications web modernes et performantes.',
+    images: ['https://portfolio-nomade.netlify.app/profile.png'],
   },
 }
 

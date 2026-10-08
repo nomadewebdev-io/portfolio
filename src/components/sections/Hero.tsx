@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Badge from '../ui/Badge'
 import Button from '../ui/Button'
 
@@ -90,7 +90,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex items-center justify-center"
           >
             <a href="#projects">
               <Button variant="primary" size="lg">
@@ -100,12 +100,6 @@ export default function Hero() {
                 </span>
               </Button>
             </a>
-            <Button variant="outline" size="lg">
-              <span className="flex items-center gap-2">
-                <Download size={20} />
-                Télécharger CV
-              </span>
-            </Button>
           </motion.div>
         </div>
 

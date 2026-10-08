@@ -1,14 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { Github, Linkedin, Twitter, Mail, MessageCircle } from 'lucide-react'
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
 
 const socialLinks = [
-  { icon: MessageCircle, href: 'https://wa.me/221770000000', label: 'WhatsApp' },
   { icon: Github, href: 'https://github.com/nomadewebdev-io', label: 'GitHub' },
   { icon: Linkedin, href: 'https://linkedin.com/in/mamadou-diallo-diallo-b9542a', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://twitter.com/dialloemdd', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:nomade.webdev@gmail.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:nomadewebdev@gmail.com', label: 'Email' },
 ]
 
 const footerLinks = [
