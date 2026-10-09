@@ -1,14 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Twitter, Mail, Wallet, Phone, MessageCircle } from 'lucide-react'
+import { Github, Mail, Wallet, Phone, MessageCircle } from 'lucide-react'
 import Badge from '../ui/Badge'
 import ContactForm from '../ui/ContactForm'
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/nomadewebdev-io', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/mamadou-diallo-diallo-b9542a', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com/dialloemdd', label: 'Twitter' },
   { icon: Mail, href: 'mailto:nomadewebdev@gmail.com', label: 'Email' },
 ]
 
@@ -104,12 +102,12 @@ export default function Contact() {
               </a>
             </div>
 
-            {/* Payment methods note */}
+            {/* Payment note */}
             <div className="p-4 rounded-2xl bg-slate-900/60 border border-white/10 flex items-start gap-3">
               <Wallet size={20} className="text-emerald-400 mt-0.5 flex-shrink-0" />
               <div className="text-xs sm:text-sm text-slate-300">
-                <span className="font-semibold text-foreground block mb-0.5">Moyens de paiement acceptés :</span>
-                Wave, Orange Money, Free Money, virement bancaire local & international (facturation en Franc CFA / FCFA).
+                <span className="font-semibold text-foreground block mb-0.5">Paiement :</span>
+                Wave, Orange Money ou virement.
               </div>
             </div>
 

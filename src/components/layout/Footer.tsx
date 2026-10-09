@@ -1,12 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import { Github, Mail } from 'lucide-react'
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/nomadewebdev-io', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/mamadou-diallo-diallo-b9542a', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com/dialloemdd', label: 'Twitter' },
   { icon: Mail, href: 'mailto:nomadewebdev@gmail.com', label: 'Email' },
 ]
 
@@ -25,7 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="#" className="inline-block">
+            <Link href="/" className="inline-block">
               <span className="text-2xl font-bold gradient-text font-display">
                 Mamadou Diallo
               </span>

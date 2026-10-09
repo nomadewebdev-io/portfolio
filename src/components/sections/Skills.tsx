@@ -1,68 +1,66 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code2, Server, Database, Layers, CheckCircle2, Cpu, ArrowUpRight } from 'lucide-react'
+import { Code2, Server, Database, Layers, CheckCircle2 } from 'lucide-react'
 import Badge from '../ui/Badge'
 
 const bentoSkills = [
   {
     title: 'Frontend & Architecture d\'Interface',
-    subtitle: 'Création d\'expériences web véloces et intuitives',
+    subtitle: 'Création d\'expériences web réactives et fluides',
     icon: Code2,
     colSpan: 'md:col-span-2',
     accent: 'border-emerald-500/20 bg-emerald-500/5',
     iconBg: 'bg-emerald-500/15 text-emerald-400',
     capabilities: [
-      'Next.js 14 (App Router) & React 18',
-      'TypeScript pour un code typé et sans régression',
-      'Tailwind CSS, animations fluides (Framer Motion)',
-      'Optimisation des Core Web Vitals et SEO technique',
+      'Next.js (App Router) & React',
+      'TypeScript pour un code typé et structuré',
+      'Tailwind CSS pour des interfaces soignées et adaptatives',
+      'Intégration HTML5/CSS3 responsive et accessible',
     ],
-    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'HTML5/CSS3'],
+    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML5/CSS3'],
   },
   {
-    title: 'Backend & APIs Scalables',
-    subtitle: 'Services fiables et sécurisés',
+    title: 'Backend & APIs',
+    subtitle: 'Services Node.js et intégration d\'APIs',
     icon: Server,
     colSpan: 'md:col-span-1',
     accent: 'border-white/10 bg-slate-900/80',
     iconBg: 'bg-emerald-500/10 text-emerald-400',
     capabilities: [
-      'Node.js & Express pour APIs RESTful performantes',
-      'Authentification sécurisée (JWT, sessions, OAuth)',
-      'Architecture modulaire orientée services',
+      'Node.js & Express pour la création d\'APIs REST',
+      'Proxy d\'API, contrôle de requêtes et sécurité serveur',
+      'Consommation et intégration de services tiers (REST)',
     ],
-    tags: ['Node.js', 'Express', 'API REST', 'GraphQL', 'JWT'],
+    tags: ['Node.js', 'Express', 'API REST', 'TypeScript'],
   },
   {
     title: 'Bases de Données & Stockage',
-    subtitle: 'Gestion robuste et intégrité des données',
+    subtitle: 'Gestion relationnelle et persistance locale',
     icon: Database,
     colSpan: 'md:col-span-1',
     accent: 'border-white/10 bg-slate-900/80',
     iconBg: 'bg-emerald-500/10 text-emerald-400',
     capabilities: [
-      'PostgreSQL & modélisation relationnelle',
-      'Prisma ORM pour des requêtes sécurisées',
-      'MongoDB & gestion de documents flexibles',
-      'Mise en cache rapide avec Redis',
+      'PostgreSQL & modélisation relationnelle (Supabase, client pg)',
+      'Sécurisation des accès aux données via Row Level Security (RLS)',
+      'Persistance locale (localStorage, fichiers de données JSON)',
     ],
-    tags: ['PostgreSQL', 'Prisma', 'MongoDB', 'Redis', 'SQL'],
+    tags: ['PostgreSQL', 'Supabase', 'SQL', 'LocalStorage'],
   },
   {
-    title: 'DevOps & Intégrations Métier',
-    subtitle: 'Déploiement continu et paiements ouest-africains',
+    title: 'Déploiement & Outils',
+    subtitle: 'Mise en production et gestion de versions',
     icon: Layers,
     colSpan: 'md:col-span-2',
     accent: 'border-emerald-500/20 bg-slate-900/90',
     iconBg: 'bg-emerald-500/15 text-emerald-400',
     capabilities: [
-      'Intégration d\'APIs de paiement mobile : Wave, Orange Money, Free Money',
-      'Conteneurisation avec Docker & gestion des environnements',
-      'Pipelines CI/CD automatisés et déploiement Vercel / Netlify',
-      'Collaboration d\'équipe sous Git & revues de code rigoureuses',
+      'Gestion de versions et collaboration avec Git & GitHub',
+      'Hébergement et déploiement continu sur Netlify & Vercel',
+      'Outillage frontend et environnements de build (Vite, npm)',
     ],
-    tags: ['Wave API', 'Orange Money API', 'Docker', 'Git / GitHub', 'CI/CD', 'Vercel'],
+    tags: ['Git', 'GitHub', 'Netlify', 'Vercel', 'Vite', 'npm'],
   },
 ]
 
@@ -83,7 +81,7 @@ export default function Skills() {
             Stack Technique & Savoir-Faire
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-            Une expertise full-stack complète pour concevoir, déployer et maintenir des applications web de bout en bout.
+            Technologies et outils mis en pratique à travers mes différents projets.
           </p>
         </motion.div>
 
