@@ -6,27 +6,15 @@ import Badge from '../ui/Badge'
 
 const experiences = [
   {
-    title: 'Développeur Web Full-Stack Freelance',
+    title: 'Développeur Web Full-Stack indépendant',
     company: 'Indépendant',
     location: 'Dakar & International (Remote)',
-    period: '2024 - Présent',
-    description: 'Conception et livraison d\'applications web complètes pour des startups et des entreprises locales et internationales. Architecture moderne React/Next.js et Node.js, intégrations d\'APIs de paiement et suivi de projet rigoureux.',
+    period: '2023 - Présent',
+    description: 'Développeur autodidacte. Conception et développement d\'applications web complètes en TypeScript, React, Next.js et Node.js. Mise en place d\'architectures modernes, intégration de bases de données et d\'APIs tierces.',
     achievements: [
-      'Conception et livraison de projets web complets dans le respect des délais',
-      'Accompagnement rigoureux des clients et suivi technique continu',
-      'Architecture technique modulaire, sécurisée et scalable',
-    ],
-  },
-  {
-    title: 'Développeur Web Junior',
-    company: 'Startup Locale',
-    location: 'Dakar, Sénégal',
-    period: '2022 - 2024',
-    description: 'Participation active au développement d\'applications web pour des PME locales. Travail collaboratif en équipe agile, revues de code et maintien de la qualité logicielle.',
-    achievements: [
-      'Développement et mise en production d\'applications web pour des PME',
-      'Montée en compétence approfondie sur l\'écosystème React et Node.js',
-      'Pratique quotidienne des méthodologies Agiles et de Git',
+      'Conception et développement d\'applications web modernes de bout en bout',
+      'Intégration d\'architectures full-stack réactives, modulaires et maintenables',
+      'Accompagnement technique des clients, clarté du code et respect des exigences',
     ],
   },
 ]

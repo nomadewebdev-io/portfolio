@@ -13,7 +13,7 @@ Portfolio professionnel de développeur web full-stack. Un site moderne et dynam
 
 ```bash
 # Cloner le projet
-git clone https://github.com/mamadou-diallo/portfolio.git
+git clone https://github.com/nomadewebdev-io/portfolio.git
 cd portfolio
 
 # Installer les dépendances
@@ -108,4 +108,4 @@ Ce projet est open source et disponible sous licence MIT.
 
 ---
 
-Créé avec 💜 par Mamadou Diallo
+Développé par Mamadou Diallo

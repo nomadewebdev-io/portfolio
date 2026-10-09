@@ -1,12 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, ExternalLink, ShoppingBag, BarChart3, CloudSun, CheckSquare, Server, Store } from 'lucide-react'
+import { Github, ExternalLink, ShoppingBag, BarChart3, CloudSun, CheckSquare, Building2, Sparkles } from 'lucide-react'
 import Badge from '../ui/Badge'
+
+type ProjectStatus = 'Déployé' | 'Pré-lancement' | 'En production' | 'Open source'
 
 interface Project {
   title: string
-  status: 'Déployé' | 'En cours' | 'En développement'
+  status: ProjectStatus
   description: string
   tags: string[]
   icon: any
@@ -14,40 +16,44 @@ interface Project {
   demo?: string
 }
 
-const statusBadgeStyles: Record<string, string> = {
+const statusBadgeStyles: Record<ProjectStatus, string> = {
   'Déployé': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/25',
-  'En cours': 'bg-amber-500/10 text-amber-400 border-amber-500/25',
-  'En développement': 'bg-sky-500/10 text-sky-400 border-sky-500/25',
+  'En production': 'bg-teal-500/10 text-teal-300 border-teal-500/25',
+  'Pré-lancement': 'bg-amber-500/10 text-amber-400 border-amber-500/25',
+  'Open source': 'bg-indigo-500/10 text-indigo-300 border-indigo-500/25',
 }
 
 const projects: Project[] = [
   {
-    title: 'Marketplace de vêtements',
-    status: 'En développement',
-    description: 'Application web d\'achat et de vente de vêtements (marketplace et boutique officielle) pour le Sénégal et l\'Afrique de l\'Ouest.',
+    title: 'Xewel',
+    status: 'Pré-lancement',
+    description: 'Marketplace d\'achat et de vente de vêtements et accessoires pour le Sénégal et l\'Afrique de l\'Ouest.',
     tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
     icon: ShoppingBag,
+    demo: 'https://xewel.netlify.app',
   },
   {
-    title: 'Plateforme E-Commerce',
-    status: 'En cours',
-    description: 'Application web e-commerce en cours de développement : gestion de panier, catalogue de produits, tarification en Franc CFA (FCFA) et intégration Wave et Orange Money prévue.',
-    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'FCFA'],
-    icon: Store,
+    title: 'OULIBIJ BEAUTY',
+    status: 'En production',
+    description: 'Application web pour salon de coiffure pour femme et soins de beauté : réservation en ligne multi-étapes, catalogue de prestations et gestion des créneaux.',
+    tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+    icon: Sparkles,
   },
   {
-    title: 'Dashboard Analytics',
-    status: 'En cours',
-    description: 'Tableau de bord de visualisation de données et d\'activité en cours de développement : indicateurs financiers en FCFA et graphiques dynamiques.',
-    tags: ['React', 'D3.js', 'Node.js', 'MongoDB'],
+    title: 'Vertexe Agency',
+    status: 'En production',
+    description: 'Landing page responsive pour l\'agence digitale Vertex Agency, présentant l\'ensemble des services, réalisations et un formulaire de contact.',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Vite'],
+    icon: Building2,
+    github: 'https://github.com/nomadewebdev-io/vertexangency',
+  },
+  {
+    title: 'Analyste BRVM',
+    status: 'Open source',
+    description: 'Application web de suivi de portefeuille d\'actions de la BRVM en FCFA : valorisation, dividendes, versements mensuels et échange avec un analyste IA.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'Anthropic API'],
     icon: BarChart3,
-  },
-  {
-    title: 'Passerelle API',
-    status: 'En cours',
-    description: 'Architecture backend de services API en cours d\'élaboration : structuration des points d\'accès REST, authentification JWT et documentation technique.',
-    tags: ['Node.js', 'Express', 'PostgreSQL', 'Redis'],
-    icon: Server,
+    github: 'https://github.com/nomadewebdev-io/analiste-brvm',
   },
   {
     title: 'Application Météo',
@@ -86,7 +92,7 @@ export default function Projects() {
             Réalisations & Projets
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-            Aperçu des applications déployées et des projets actuellement en cours de développement.
+            Aperçu des applications en production, en pré-lancement, open source et déployées.
           </p>
         </motion.div>
 

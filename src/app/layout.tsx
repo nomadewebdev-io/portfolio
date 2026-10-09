@@ -21,15 +21,15 @@ export const metadata: Metadata = {
     canonical: 'https://portfolio-nomade.netlify.app',
   },
   title: 'Mamadou Diallo | Développeur Web Full-Stack',
-  description: 'Développeur Web Full-Stack freelance basé à Dakar. Je conçois des applications web modernes, performantes et orientées utilisateur.',
-  keywords: ['développeur web', 'full-stack', 'freelance', 'React', 'Next.js', 'Node.js', 'Dakar', 'Sénégal'],
+  description: 'Développeur Web Full-Stack indépendant basé à Dakar, autodidacte depuis 2023. Conception d\'applications web modernes et performantes.',
+  keywords: ['développeur web', 'full-stack', 'indépendant', 'React', 'Next.js', 'Node.js', 'Dakar', 'Sénégal'],
   authors: [{ name: 'Mamadou Diallo' }],
   icons: {
     icon: '/profile.png',
   },
   openGraph: {
     title: 'Mamadou Diallo | Développeur Web Full-Stack',
-    description: 'Développeur Web Full-Stack freelance basé à Dakar. Applications web modernes et performantes.',
+    description: 'Développeur Web Full-Stack indépendant basé à Dakar, autodidacte depuis 2023. Applications web modernes et performantes.',
     url: 'https://portfolio-nomade.netlify.app',
     type: 'website',
     images: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Mamadou Diallo | Développeur Web Full-Stack',
-    description: 'Développeur Web Full-Stack freelance basé à Dakar. Applications web modernes et performantes.',
+    description: 'Développeur Web Full-Stack indépendant basé à Dakar, autodidacte depuis 2023. Applications web modernes et performantes.',
     images: ['https://portfolio-nomade.netlify.app/profile.png'],
   },
 }

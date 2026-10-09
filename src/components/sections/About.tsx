@@ -101,15 +101,15 @@ export default function About() {
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-sm font-medium">
                 <CheckCircle2 size={16} />
-                <span>Développeur passionné & orienté résultats</span>
+                <span>Développeur autodidacte, depuis 2023</span>
               </div>
               <h3 className="text-2xl font-bold font-display text-foreground">
                 Je suis Mamadou Diallo
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Développeur web full-stack freelance basé à Dakar, passionné par la création d&apos;applications
-                modernes et performantes. Je travaille avec des startups, des PME et des entrepreneurs
-                pour transformer leurs idées en produits digitaux fonctionnels et scalables.
+                Développeur autodidacte depuis 2023 et développeur web full-stack indépendant basé à Dakar.
+                Je conçois des applications modernes et performantes en accompagnant les startups, PME et porteurs
+                de projet dans la réalisation de leurs solutions digitales.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Mon approche privilégie la clarté du code, l&apos;expérience utilisateur, la communication transparente

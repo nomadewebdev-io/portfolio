@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Twitter, Mail, Wallet } from 'lucide-react'
+import { Github, Linkedin, Twitter, Mail, Wallet, Phone, MessageCircle } from 'lucide-react'
 import Badge from '../ui/Badge'
 import ContactForm from '../ui/ContactForm'
 
@@ -53,6 +53,40 @@ export default function Contact() {
 
             {/* Direct contact channels */}
             <div className="space-y-3">
+              {/* WhatsApp direct */}
+              <a
+                href="https://wa.me/221777661326"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-emerald-500/40 hover:bg-slate-900 transition-all group"
+              >
+                <div className="p-3 rounded-xl bg-slate-800 text-emerald-400 border border-white/10 flex-shrink-0">
+                  <MessageCircle size={20} />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground font-medium">WhatsApp direct</p>
+                  <p className="font-semibold text-foreground group-hover:text-emerald-400 transition-colors text-sm sm:text-base">
+                    +221 77 766 13 26
+                  </p>
+                </div>
+              </a>
+
+              {/* Téléphone direct */}
+              <a
+                href="tel:+221777661326"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-emerald-500/40 hover:bg-slate-900 transition-all group"
+              >
+                <div className="p-3 rounded-xl bg-slate-800 text-emerald-400 border border-white/10 flex-shrink-0">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground font-medium">Téléphone direct</p>
+                  <p className="font-semibold text-foreground group-hover:text-emerald-400 transition-colors text-sm sm:text-base">
+                    +221 77 766 13 26
+                  </p>
+                </div>
+              </a>
+
               {/* Email direct */}
               <a
                 href="mailto:nomadewebdev@gmail.com"

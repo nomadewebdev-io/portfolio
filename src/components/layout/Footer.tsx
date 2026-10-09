@@ -31,7 +31,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Développeur Web Full-Stack freelance basé à Dakar. Création d&apos;applications performantes, intuitives et adaptées aux réalités du marché.
+              Développeur Web Full-Stack indépendant basé à Dakar. Création d&apos;applications performantes, intuitives et adaptées aux réalités du marché.
             </p>
           </div>
 

@@ -36,7 +36,7 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span className="text-xs sm:text-sm text-foreground/90 font-medium">
-                Mamadou Diallo • Disponible pour nouveaux projets
+                Mamadou Diallo • Développeur autodidacte, depuis 2023
               </span>
             </div>
           </motion.div>
